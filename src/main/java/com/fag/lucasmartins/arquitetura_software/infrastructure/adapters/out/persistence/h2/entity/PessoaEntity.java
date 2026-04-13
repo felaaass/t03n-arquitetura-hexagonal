@@ -1,60 +1,83 @@
 package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
-@Table(name = "tb_produto")
+@Table(name = "tb_pessoa")
 public class PessoaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private UUID id;
 
-    private String nome;
+    private String nomeCompleto;
 
-    private Integer estoque;
+    private String cpf;
 
-    private double preco;
+    private LocalDate dataNascimento;
 
-    private double precoFinal;
+    private String email;
 
-    public Integer getId() {
-        return Id;
+    private String telefone;
+
+    public PessoaEntity() {
     }
 
-    public void setId(Integer id) {
-        Id = id;
+    public PessoaEntity(UUID id, String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String telefone) {
+        this.id = id;
+        this.nomeCompleto = nomeCompleto;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.telefone = telefone;
     }
 
-    public String getNome() {
-        return nome;
+    public UUID getId() {
+        return id;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
-    public Integer getEstoque() {
-        return estoque;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setEstoque(Integer estoque) {
-        this.estoque = estoque;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
 
-    public double getPreco() {
-        return preco;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public double getPrecoFinal() {
-        return precoFinal;
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setPrecoFinal(double precoFinal) {
-        this.precoFinal = precoFinal;
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }

@@ -1,7 +1,7 @@
 package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.mapper;
 
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.PessoaBO;
-import com.fag.lucasmartins.arquitetura_software.infrastructure.entities.PessoaEntity;
+import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.entity.PessoaEntity;
 
 public class PessoaEntityMapper {
 
