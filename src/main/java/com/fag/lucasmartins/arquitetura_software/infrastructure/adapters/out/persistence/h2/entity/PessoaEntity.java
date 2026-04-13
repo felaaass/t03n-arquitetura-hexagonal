@@ -1,8 +1,14 @@
-package com.fag.lucasmartins.arquitetura_software.core.domain.bo;
+package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.entity;
 
-import com.fag.lucasmartins.arquitetura_software.core.domain.exceptions.DomainException;
+import javax.persistence.*;
 
-public class ProdutoBO {
+@Entity
+@Table(name = "tb_produto")
+public class PessoaEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer Id;
 
     private String nome;
 
@@ -12,18 +18,12 @@ public class ProdutoBO {
 
     private double precoFinal;
 
-    public void validarPrecoProdutoPremium() {
-        if (this.nome != null && this.nome.toLowerCase().contains("premium")) {
-            if (this.preco < 100.0) {
-                throw new DomainException("Erro: Produtos Premium não podem custar menos de R$ 100,00.");
-            }
-        }
+    public Integer getId() {
+        return Id;
     }
 
-    public void calcularPrecoFinalPorEstoqueBaixo(){
-        if (estoque != null && estoque >= 50) {
-            this.precoFinal = preco - (preco * 0.10);
-        }
+    public void setId(Integer id) {
+        Id = id;
     }
 
     public String getNome() {
