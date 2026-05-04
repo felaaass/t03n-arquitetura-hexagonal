@@ -20,7 +20,7 @@ public class SqsPedidoAdapter {;
 
     @SqsListener("${queue.order-events}")
     public void listen(EntradaPedidoDTO dto) {
-        System.out.println("Mensagem recebida, ID da pessoa: " + dto.getCustomId());
+        System.out.println("Mensagem recebida, ID da pessoa: " + dto.getCustomerId());
 
         PedidoBO pedidoBO = pedidoBOMapper.toBo(dto);
 
